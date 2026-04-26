@@ -15,8 +15,7 @@ body {
 
 :root {
   --tamanho-header: 90px;
-  --tamanho-banner: calc(90vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-banner: calc(0vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
 }
@@ -226,6 +225,7 @@ h2 {
   height: var(--tamanho-login);
   background-image: url('../assets/imgs/P5Login.png');
   background-size: cover;
+  overflow-y: auto;
 }
 
 .cadastro {
@@ -239,7 +239,6 @@ h2 {
   align-items: flex-start;
   width:80%;
   flex-direction: column;
-  height: 110%;
 }
 
 .divisao {
@@ -268,7 +267,7 @@ h2 {
 }
 
 .card {
-  width: 20vw;
+  width: 300px;
   background: linear-gradient(180deg, white 50%, black 50%);
   border: black 4px solid;
   display: flex;
@@ -434,18 +433,6 @@ input {
 .loading-div img {
   height: 50px;
   width: 50px;
-}
-
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
 }
 
 /* ALERTA */
