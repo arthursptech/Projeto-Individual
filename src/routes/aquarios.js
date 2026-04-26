@@ -1,3 +1,4 @@
+/*
 var express = require("express");
 var router = express.Router();
 
@@ -12,3 +13,4 @@ router.post("/cadastrar", function (req, res) {
 })
 
 module.exports = router;
+*/

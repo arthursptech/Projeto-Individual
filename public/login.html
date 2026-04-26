@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="icon" href="./assets/icon/logoOST.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -21,7 +21,7 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo">Original Soundtrack</h1>
+            <h1 class="titulo agora">Original Soundtrack</h1>
             <ul class="navbar">
                 <li>
                     <a href="index.html">Home</a>
@@ -46,19 +46,37 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
                 <div class="formulario">
                     <div class="campo">
-                        <span>E-mail:</span>
+                        <h2>Título</h2>
+                        <h2>おかえり</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-login">
+                <div class="formulario">
+                    <div class="campo">
+                        <span>E-mail</span>
                         <input id="email_input" type="text" placeholder="Login">
                     </div>
+                </div>
+            </div>
+
+            <div class="card card-login">
+                <div class="formulario">
                     <div class="campo">
-                        <span>Senha:</span>
+                        <span>Senha</span>
                         <input id="senha_input" type="password" placeholder="******">
                     </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
                 </div>
-
+            </div>
+            <div class="card card-login">
+                <div class="formulario">
+                    <div class="campo">
+                        <span>Botão</span>
+                        <button class="botao" onclick="entrar()">Entrar</button>
+                    </div>
+                </div>
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
@@ -68,15 +86,48 @@
         </div>
     </div>
 
-    <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+            <div class="boxes">
+                <div class="box">
+                    <h4>Feito por Arthur N. Martins &#9834<br>
+                        1CCOA 2026
+                    </h4>
+                </div>
+
+                <div class="box">
+                    <span>Páginas</span>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+                </div>
+
+                <div class="box">
+                    <span>Links</span>
+                    <li>
+                        <a href="https://github.com/arthursptech"><img
+                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Github </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/arthursptech/Projeto-Individual"><img
+                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Repo do Projeto</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/arthur-martins-a00706373 "><img
+                                src="https://images.seeklogo.com/logo-png/38/2/linkedin-black-icon-logo-png_seeklogo-387472.png">
+                            Linkedin</a>
+                    </li>
+                </div>
+            </div>
             <span class="version">v1.0.0</span>
         </div>
     </div>
-    <!--footer fim-->
-
 </body>
 
 </html>

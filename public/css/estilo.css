@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+  font-family: Persona5Font;
+  src: url(../assets/fonts/Persona5MenuFontPrototype-Regular.otf);
+
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,8 +43,9 @@ body {
   color: #e43c3c;
 }
 
-.agora {
+.agora li{
   font-weight: 800;
+  color: #e43c3c;
 }
 
 .navbar {
@@ -56,6 +63,9 @@ body {
   font-weight: 500;
 }
 
+.agora {
+  color: #e43c3c;
+}
 .header h1 {
   margin: 0;
 }
@@ -214,52 +224,103 @@ h2 {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/P5Login.png');
+  background-size: cover;
+}
+
+.cadastro {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/P5Cadastro.jpeg');
   background-size: cover;
 }
 
 .login .container {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:80%;
+  flex-direction: column;
+  height: 110%;
+}
+
+.divisao {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.cadastro .container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  flex-direction: column;
+  margin: 0 0 0 10vw;
+  height:fit-content;
+}
+
+.login .container-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:90%;
+  flex-direction: column;
+  margin: 0 0 0 -30vw;
+  height:fit-content;
 }
 
 .card {
-  width: 50%;
-  background-color: #e5e5e5;
-  border-radius: 10px;
+  width: 20vw;
+  background: linear-gradient(180deg, white 50%, black 50%);
+  border: black 4px solid;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color:#e43c3c;
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  padding: 20px 20px;
+  transform: rotate3d(0,0,2,-5deg);
+  margin-top: 3vh;
 }
 
-.card h2 {
+.card h2:nth-of-type(1) {
+  margin: 0;
+  font-size: 40px;
+  color:black;
+  text-align: center;
+  transform: translateY(-35%);
+  font-family: 'Persona5font';
+}
+
+.card h2:nth-of-type(2) {
   margin: 0;
   font-size: 30px;
+  color:white;
+  text-align: center;
+  transform: translateY(35%);
 }
 
 .formulario {
   display: flex;
-  height: 90%;
+  height: 100%;
   width: 80%;
   justify-content: space-around;
   flex-direction: column;
 }
 
 .formulario span {
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 40px;
+  color:black;
+  text-align: center;
+  transform: translateY(-35%);
+  font-family: 'Persona5font';
 }
 
 .formulario input {
-  border: 2px solid #e98934;
+  border: 2px solid black;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0;
+  transform: translateY(35%);
 }
 
 .formulario select {
@@ -268,7 +329,7 @@ h2 {
   color: gray;
   height: 36px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0;
 }
 
@@ -281,17 +342,17 @@ h2 {
 
 .botao {
   cursor: pointer;
-  font-family: "Barlow", sans-serif;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
+  color: black;
+  background-color: #ffffff;
   width: 120px;
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  transform: translateY(35%);
 }
 
 .loading-div {
@@ -439,7 +500,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* links do Spotify */
+/* links do Spotify/Youtube */
 iframe {
   width: 100%;
   height: 352px;

@@ -11,7 +11,7 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="./assets/icon/logoOST.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
@@ -19,7 +19,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">Original Soundtrack</h1>
+      <h1 class="titulo agora">Original Soundtrack</h1>
       <ul class="navbar">
         <li>
           <a href="index.html">Home</a>
@@ -36,63 +36,118 @@
   </div>
   <!--header fim-->
 
-  <div class="login">
+  <div class="cadastro login">
     <div class="alerta_erro">
       <div class="card_erro" id="cardErro">
         <span id="mensagem_erro"></span>
       </div>
     </div>
-    <div class="container">
+    <div class="divisao">
+      <div class="container">
       <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
           <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
+            <h2>Título</h2>
+            <h2>ようこそ</h2>
           </div>
+        </div>
+      </div>
+
+      <div class="card card-cadastro">
+        <div class="formulario">
           <div class="campo">
-            <span>Nome:</span>
+            <span>Usuário</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
+        </div>
+      </div>
+
+      <div class="card card-cadastro">
+        <div class="formulario">
           <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="XXX.XXX.XXX-XX"/>
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
+            <span>E-mail</span>
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-center">
+      <div class="card card-cadastro">
+        <div class="formulario">
           <div class="campo">
-            <span>Senha:</span>
+            <span>Senha</span>
             <input id="senha_input" type="password" placeholder="******" />
           </div>
+        </div>
+      </div>
+
+      <div class="card card-cadastro">
+        <div class="formulario">
           <div class="campo">
-            <span>Confirmação da Senha:</span>
+            <span>Confirmação</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
+      </div>
+
+      <div class="card card-cadastro">
+        <div class="formulario">
+          <div class="campo">
+            <span>Botão</span>
+            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+          </div>
+        </div>
+    </div>
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
-
         <div id="div_erros_login"></div>
       </div>
     </div>
   </div>
 
-  <!--footer inicio-->
   <div class="footer">
     <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+      <div class="boxes">
+        <div class="box">
+          <h4>Feito por Arthur N. Martins &#9834<br>
+            1CCOA 2026
+          </h4>
+        </div>
+
+        <div class="box">
+          <span>Páginas</span>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="cadastro.html">Cadastro</a>
+          </li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+        </div>
+
+        <div class="box">
+          <span>Links</span>
+          <li>
+            <a href="https://github.com/arthursptech"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+              Github </a>
+          </li>
+          <li>
+            <a href="https://github.com/arthursptech/Projeto-Individual"><img
+                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> Repo do Projeto</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/arthur-martins-a00706373 "><img
+                src="https://images.seeklogo.com/logo-png/38/2/linkedin-black-icon-logo-png_seeklogo-387472.png">
+              Linkedin</a>
+          </li>
+        </div>
+      </div>
       <span class="version">v1.0.0</span>
     </div>
   </div>
-  <!--footer fim-->
 </body>
 
 </html>
@@ -108,21 +163,17 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
-    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
     var idEmpresaVincular
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
-      cpfVar == "" || 
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -131,12 +182,11 @@
       finalizarAguardar();
       return false;
     } else if (
-        nomeVar.length < 1 ||
-        cpfVar.length != 11 ||
-        !emailVar.includes('@') ||
-        !emailVar.includes('.') ||
-        senhaVar.length < 6 ||
-        confirmacaoSenhaVar != senhaVar
+      nomeVar.length < 1 ||
+      !emailVar.includes('@') ||
+      !emailVar.includes('.') ||
+      senhaVar.length < 6 ||
+      confirmacaoSenhaVar != senhaVar
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -146,19 +196,6 @@
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
-    }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "⚠️Erro! Código de ativação inválido.";
-        finalizarAguardar();
-      }
     }
 
     // Enviando o valor da nova input
@@ -171,10 +208,8 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -203,7 +238,7 @@
 
     return false;
   }
-
+  /*
   // Listando empresas cadastradas 
   function listar() {
     fetch("/empresas/listar", {
@@ -223,7 +258,7 @@
         console.log(`#ERRO: ${resposta}`);
       });
   }
-
+  */
   function sumirMensagem() {
     cardErro.style.display = "none";
   }

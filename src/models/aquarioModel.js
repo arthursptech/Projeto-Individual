@@ -1,3 +1,4 @@
+/*
 var database = require("../database/config");
 
 function buscarAquariosPorEmpresa(empresaId) {
@@ -21,3 +22,4 @@ module.exports = {
   buscarAquariosPorEmpresa,
   cadastrar
 }
+*/
