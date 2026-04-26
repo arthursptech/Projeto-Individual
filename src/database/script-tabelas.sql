@@ -22,7 +22,7 @@ CREATE TABLE aviso (
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 	fkUsuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE ranking (
