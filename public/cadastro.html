@@ -2,20 +2,19 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>OST | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
-
   <link rel="stylesheet" href="./css/estilo.css" />
   <link rel="icon" href="./assets/icon/logoOST.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -148,6 +147,7 @@
       <span class="version">v1.0.0</span>
     </div>
   </div>
+  
 </body>
 
 </html>
@@ -155,7 +155,6 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();

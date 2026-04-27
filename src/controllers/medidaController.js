@@ -1,3 +1,4 @@
+/*
 var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
@@ -46,3 +47,4 @@ module.exports = {
     buscarMedidasEmTempoReal
 
 }
+*/
