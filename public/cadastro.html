@@ -165,14 +165,17 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
+    
     // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
+    var ListaVerificacao = [nomeVar, emailVar, senhaVar, confirmacaoSenhaVar];
+    var vazio = false;
+    for (let i = 0; i < ListaVerificacao.length; i++) {
+      if (ListaVerificacao[i] == "") {
+        vazio = true;
+      }
+      
+    }
+    if (vazio) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "⚠️Erro! Preencha todos os campos corretamente.";
