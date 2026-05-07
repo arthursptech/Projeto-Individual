@@ -80,22 +80,30 @@
     <div class="container">
       <h2>Exemplos de Original Soundtracks</h2>
 
+      <!-- onmousedown="document.getElementById('audio').pause()" -->
       <div class="boxes">
         <div class="box">
-          <iframe src="https://www.youtube.com/embed/OsSRIjgJDnI?si=Z_tHQhzxqZuiOjF1&amp;start=117" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div id="img_phm">
+            <img onclick="tocarVideo(1)" src="./assets/imgs/phmYT.png" alt="Project Hail Mary">
+          </div>
+
           <h4>Do Filme <b>Project Hail Mary</b></h4>
           <span class="saber-mais">Deseja saber mais sobre essa OST?<br><a href="phm.html" class="aqui">Clique Aqui!</a></span>
         </div>
 
         <div class="box">
-          <iframe src="https://www.youtube.com/embed/PslQESlD4xs?si=6Cze3ZhpjQqRH-mI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div id="img_nier">
+            <img onclick="tocarVideo(2)" src="./assets/imgs/nierYT.png" alt="Nier:Automata">
+          </div>
 
           <h4>Do Jogo <b>Nier:Automata</b></h4>
           <span class="saber-mais">Deseja saber mais sobre essa OST?<br><a href="nier.html" class="aqui">Clique Aqui!</a></span>
         </div>
 
         <div class="box">
-          <iframe src="https://www.youtube.com/embed/VT6LFOIofRE?si=iJwj_Pu8rkiWA5nY&amp;start=175" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div id="img_ttgl">
+            <img onclick="tocarVideo(3)" src="./assets/imgs/ttglYT.png" alt="Tengen Toppa Gurren Lagann">
+          </div>
 
           <h4>Do Anime <b>Tengen Toppa Gurren Lagann</b></h4>
           <span class="saber-mais">Deseja saber mais sobre essa OST?<br><a href="ttgl.html" class="aqui">Clique Aqui!</a></span>
@@ -178,4 +186,15 @@
 <script>
   var audio = document.getElementById("audio");
   audio.volume = 0.15;
+  function tocarVideo(num) {
+    audio.pause();
+    if (num == 1) {
+      img_phm.innerHTML = `<iframe src="https://www.youtube.com/embed/OsSRIjgJDnI?si=Z_tHQhzxqZuiOjF1&amp;start=117&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    } else if (num == 2) {
+      img_nier.innerHTML = `<iframe  src="https://www.youtube.com/embed/PslQESlD4xs?si=6Cze3ZhpjQqRH-mI;autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    } else if (num == 3) {
+      img_ttgl.innerHTML = `<iframe src="https://www.youtube.com/embed/VT6LFOIofRE?si=iJwj_Pu8rkiWA5nY&amp;start=175;autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    }
+    
+  }
 </script>
