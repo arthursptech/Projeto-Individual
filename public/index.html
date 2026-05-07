@@ -13,9 +13,20 @@
   <link rel="stylesheet" href="./css/estilo.css">
   <link rel="icon" href="./assets/icon/logoOST.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 
 <body>
+  <audio autoplay loop id="audio" src="https://codehs.com/uploads/ff1e4e29990724e90e6cd1f4f2487791"></audio>
+
+  <div class="musica">
+    <div class="container">
+      <img src="https://cdn.modrinth.com/data/G0jB05Ux/181588c9480c48b2fb75889d36553460c6f46eb9.gif"><span>Música tocando: <a href="https://youtu.be/q6o7qpPHd7g?si=frzL5qMHVs_4KOtA">Alpha - C418</a>
+      <a onclick="document.getElementById('audio').play()"><i class="fas fa-play"></i></a>
+      <a onclick="document.getElementById('audio').pause()"><i class="fas fa-pause"></i></a>
+      </span>
+    </div>
+  </div>
   <div class="header">
     <div class="container">
       <h1 class="titulo">Original Soundtrack</h1>
@@ -106,7 +117,8 @@
         <div class="box">
           <img src="assets/imgs/responsabilidade.png">
           <h4>Responsabilidade</h4>
-          <p>Entender a importância de cumprir com ações próprias e compromissos assumidos.</p>
+          <p>Entender a importância de cumprir com ações próprias<br>
+            e compromissos assumidos.</p>
         </div>
         <div class="box">
           <img src="assets/imgs/esforco.png">
@@ -162,3 +174,8 @@
 </body>
 
 </html>
+
+<script>
+  var audio = document.getElementById("audio");
+  audio.volume = 0.15;
+</script>

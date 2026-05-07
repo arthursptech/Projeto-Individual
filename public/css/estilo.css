@@ -27,6 +27,43 @@ body {
   margin: auto;
 }
 
+.musica {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: -3vh;
+}
+.musica .container{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.musica span {
+  color:#761414;
+  font-size: 20px;
+}
+
+.musica img {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.musica a {
+  text-decoration: none;
+  color: #761414;
+  transition-duration: 0.6s;
+}
+.musica a:hover {
+  text-decoration: none;
+  color: #e98934;
+}
+.musica i {
+  margin-left: 2px;
+  transition-duration: 0.3s;
+}
+.musica i:hover {
+  color: #e98934;
+}
+
 .header {
   height: var(--tamanho-header);
 }
@@ -119,6 +156,7 @@ h2 {
   line-height: 1.5;
   text-align: center;
 }
+
 /* Exemplos */
 
 .exemplo {
@@ -148,6 +186,7 @@ h2 {
   color:#e98934;
   
 }
+
 /* Valores */
 
 .valor {
@@ -169,7 +208,7 @@ h2 {
 
 .container .boxes {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   padding: 30px 5px;
 }
