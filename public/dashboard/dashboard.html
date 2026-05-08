@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OST | Ranking</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
@@ -35,7 +35,9 @@
             <h1>Original Soundtrack</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Olá, <span id="b_usuario">usuário</span>!
+                    <br>
+                Seu id é: <span id="idUser">id</span></h3>
             </div>
 
             <div class="btn-nav-white">
@@ -64,6 +66,30 @@
 
         <div class="dash">
             <div id="alerta">
+            </div>
+            <div class="area-parametros-alerta">
+                <div class="parametros-alerta">
+                    <div class="item-regua perigo-frio">
+                        <p>Usuário com mais acertos</p>
+                        <p id="r_usuario">usuario<span id="idUser">#id</span></p>
+                    </div>
+                    <div class="item-regua alerta-frio">
+                        <p>OST com mais acertos</p>
+                        <p id="topOst">ost#1</p>
+                    </div>
+                    <div class="item-regua ideal">
+                        <p>Média de acertos</p>
+                        <p id="media">media</p>
+                    </div>
+                    <div class="item-regua alerta-quente">
+                        <p>OST com mais erros</p>
+                        <p id="botOst">ost<#</p>
+                    </div>
+                    <div class="item-regua perigo-quente">
+                        <p>Perigo</p>
+                        <p>&gt;=23°C</p>
+                    </div>
+                </div>
             </div>
 
             <div class="btns-dash" id="btnAquario">
@@ -96,7 +122,7 @@
                 backgroundColor: '#761414',
                 borderColor: '#761414'
             }
-        ]
+            ]
         }
     })
 
@@ -210,7 +236,7 @@
     // }
 
     // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
     // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     // function plotarGrafico(resposta, idAquario) {
 
@@ -275,7 +301,7 @@
 
 
     // // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // // buscando a última medida inserida em tabela contendo as capturas, 
+    // // buscando a última medida inserida em tabela contendo as capturas,
 
     // //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     // //     Para ajustar o "select", ajuste o comando sql em src/models

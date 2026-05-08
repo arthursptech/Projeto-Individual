@@ -2,19 +2,33 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>OST | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/logoOST.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="./css/estilo.css"/>
+  <link rel="icon" href="./assets/icon/logoOST.png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 
 <body>
+  <audio autoplay loop id="audio" src="https://codehs.com/uploads/cc3405e59f85e00f06f60090a7053ce0"></audio>
+
+
+  <div class="musica">
+    <div class="container">
+      <img src="https://cdn.modrinth.com/data/G0jB05Ux/181588c9480c48b2fb75889d36553460c6f46eb9.gif"><span>Música
+        tocando: <a href="https://youtu.be/q6o7qpPHd7g?si=frzL5qMHVs_4KOtA">Beneath the Mask -instrumental version- — Lyn</a>
+        <a onclick="document.getElementById('audio').play()"><i class="fas fa-play"></i></a>
+        <a onclick="document.getElementById('audio').pause()"><i class="fas fa-pause"></i></a>
+      </span>
+    </div>
+  </div>
+
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -43,60 +57,60 @@
     </div>
     <div class="divisao">
       <div class="container">
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <h2>Título</h2>
-            <h2>ようこそ</h2>
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <h2>Título</h2>
+              <h2>ようこそ</h2>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <span>Usuário</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <span>Usuário</span>
+              <input id="nome_input" type="text" placeholder="Seu nome" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <span>E-mail</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <span>E-mail</span>
+              <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-center">
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <span>Senha</span>
-            <input id="senha_input" type="password" placeholder="******" />
+      <div class="container-center">
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <span>Senha</span>
+              <input id="senha_input" type="password" placeholder="******" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <span>Confirmação</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <span>Confirmação</span>
+              <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card card-cadastro">
-        <div class="formulario">
-          <div class="campo">
-            <span>Botão</span>
-            <button class="botao" onclick="cadastrar()">Cadastrar</button>
+        <div class="card card-cadastro">
+          <div class="formulario">
+            <div class="campo">
+              <span>Botão</span>
+              <button class="botao" onclick="cadastrar()">Cadastrar</button>
+            </div>
           </div>
         </div>
-    </div>
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
@@ -147,12 +161,15 @@
       <span class="version">v1.0.0</span>
     </div>
   </div>
-  
+
 </body>
 
 </html>
 
 <script>
+  // Definindo volume do áudio
+  var audio = document.getElementById("audio");
+  audio.volume = 0.20;
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
 
@@ -165,7 +182,7 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    
+
     // Verificando se há algum campo em branco
     var ListaVerificacao = [nomeVar, emailVar, senhaVar, confirmacaoSenhaVar];
     var vazio = false;
@@ -173,14 +190,14 @@
       if (ListaVerificacao[i] == "") {
         vazio = true;
       }
-      
+
     }
     if (vazio) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "Erro! Preencha todos os campos corretamente.";
 
-      
+
       finalizarAguardar();
       return false;
     } else if (

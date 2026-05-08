@@ -13,11 +13,22 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="icon" href="./assets/icon/logoOST.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 
 <body>
-
+    <audio autoplay loop id="audio" src="https://codehs.com/uploads/58cac8c09324331ed254c4cf31270b05"></audio>
     <!--Header-->
+
+    <div class="musica">
+        <div class="container">
+            <img src="https://cdn.modrinth.com/data/G0jB05Ux/181588c9480c48b2fb75889d36553460c6f46eb9.gif"><span>Música
+                tocando: <a href="https://youtu.be/U2Qd9TRY1Ro?si=B9zovdrM5a70C51G">Beneath the Mask -rain- — Lyn</a>
+                <a onclick="document.getElementById('audio').play()"><i class="fas fa-play"></i></a>
+                <a onclick="document.getElementById('audio').pause()"><i class="fas fa-pause"></i></a>
+            </span>
+        </div>
+    </div>
 
     <div class="header">
         <div class="container">
@@ -133,7 +144,9 @@
 </html>
 
 <script>
-
+    // Definindo volume do áudio
+    var audio = document.getElementById("audio");
+    audio.volume = 0.20;
 
     function entrar() {
         aguardar();
