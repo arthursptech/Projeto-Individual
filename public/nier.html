@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <title>OST | Nier</title>
 
   <script src="./js/sessao.js"></script>
@@ -16,6 +16,19 @@
 </head>
 
 <body>
+  <audio autoplay loop id="audio" src="https://codehs.com/uploads/1c434c2fc4cf2702ff3a5dc9773ef531"></audio>
+
+
+  <div class="musica">
+    <div class="container">
+      <img src="https://cdn.modrinth.com/data/G0jB05Ux/181588c9480c48b2fb75889d36553460c6f46eb9.gif"><span>Música
+        tocando: <a href="https://youtu.be/LC5HsZt4oNc?si=3sJ8ht90bhCy5bTLa">Keiichi Okabe: City Ruins - Rays of Light</a>
+        <a onclick="document.getElementById('audio').play()"><i class="fas fa-play"></i></a>
+        <a onclick="document.getElementById('audio').pause()"><i class="fas fa-pause"></i></a>
+      </span>
+    </div>
+  </div>
+
   <div class="header">
     <div class="container">
       <h1 class="titulo">Original Soundtrack</h1>
@@ -42,7 +55,10 @@
       <h1>De onde é essa OST?</h1>
 
       <span>
-        A trilha sonora original, <i>Weight of the World the End of YoRHa</i>, é do jogo eletrônico <b>Nier:Automata</b>, um RPG de ação desenvolvido pela PlatinumGames e publicado pela Square Enix. A história se passa milhares de anos no futuro em meio a uma guerra por procuração entre máquinas criadas por invasores alienígenas e andróides concebidos pelos remanescentes da humanidade. 
+        A trilha sonora original, <i>Weight of the World the End of YoRHa</i>, é do jogo eletrônico
+        <b>Nier:Automata</b>, um RPG de ação desenvolvido pela PlatinumGames e publicado pela Square Enix. A história se
+        passa milhares de anos no futuro em meio a uma guerra por procuração entre máquinas criadas por invasores
+        alienígenas e andróides concebidos pelos remanescentes da humanidade.
       </span>
     </div>
   </div>
@@ -52,9 +68,43 @@
       <h1>Por que escolhi essa OST?</h1>
 
       <span>
-        Essa música é a minha favorita.
+        Em uma frase, o motivo de eu ter escolhido essa OST como exemplo é porque ela é não só é minha OST favorita, como também é minha música favorita. A ideia de criar uma página dedicada para cada Soundtrack exibiada na página inicial surgiu por causa dessa música. <br>
+        Antes de entrar nos detalhes, gostaria de deixar explícito que tudo que eu falar aqui é a junção da <b>minha interpretação</b> com alguns fatos.
+        <hr>
+        Essa música toca nos créditos de cada final, mudando o idioma em cada final. Os finais são chamados de Rota, e nesse jogo, há 5 Rotas principais.
+        Na Rota A, toca a versão em inglês, na Rota B, toca a versão em japonês, e na Rota C toca a versão do Caos, idioma este inventado por Emi Evans, que buscava simular um idioma futurístico que mistura vários idiomas, inclusive alguns quase extintos.
+        Na Rota D, a versão Caos se repete, mas desta vez, os créditos são interrompidos por um diálogo, e dependendo das escolhas do jogador nele, a rota E se inicia...<br>
+        <hr>
+        A música começa como todas as outras versões, exceto por duas coisas: O instrumental é em 8-bit e não tem ninguém cantando. 
+
+        O formato em 8-bit havia aparecido constantemente desde a rota B, quando jogamos com um personagem que consegue hackear os inimigos, como podemos ver a seguir:
+        <br>
+        <iframe src="https://www.youtube.com/embed/n39z44-F2Po?si=uUuBfn-ylPNb5K3S&amp;start=173" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+
+        Quando chegamos no refrão, a música deixa de ser em 8-bit e o refrão da versão em inglês começa a ser cantado.
+        <br>
+        Já o segundo verso tem a primeira parte cantada em japonês e a segunda parte em Caos. O inglês volta a ser cantado no pré-refrão e é substituído pelo japonês no refrão— mas algo está diferente...
+        <br> <hr>
+        A rota E, que é o final verdadeiro do jogo, é possívelmente o momento mais marcante e emocionante do jogo inteiro para muitos jogadores, inclusive eu. Em uma tentativa de ir contra o sistema criado pelos desenvolvedores do jogo, o jogador, similar a quando hackeia um inimigo, precisa lutar contra inimigos que atacam o jogador de volta, mas agora os inimigos são os créditos finais:
+        <img src="./assets/imgs/endingE.png" alt="Nier:Automata Ending E">
+        
+        No início, os inimigos são de dificuldade fácil, o que possibilita o jogador de derrotá-los sem grandes problemas. Porém, após alguns minutos, a dificuldade fica exponencialmente mais difícil, até chegar ao ponto do jogador não conseguir mais derrotar nenhum inimigo, e isso se repete uma vez, duas vezes, três vezes, quatro vezes, cinco vezes—
+        <br>
       </span>
+      <div class="fundo">
+        <span>"VOCÊ ACEITA A DERROTA?"</span>
+      </div>
+      <div class="fundo">
+        <span>"SERÁ QUE TUDO ISSO NÃO TEM SENTIDO?"</span>
+      </div>
+      
     </div>
   </div>
 
 </body>
+
+<script>
+  var audio = document.getElementById("audio");
+  audio.volume = 0.20;
+</script>

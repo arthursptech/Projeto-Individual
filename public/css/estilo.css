@@ -282,6 +282,12 @@ h2 {
   margin-left: -5px;
 }
 /* LOGIN */
+/* .loading {
+  opacity: 1;
+  background-color: #0000000a;
+  z-index: 1000;
+} */
+
 
 .login {
   height: var(--tamanho-login);

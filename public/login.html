@@ -23,7 +23,7 @@
     <div class="musica">
         <div class="container">
             <img src="https://cdn.modrinth.com/data/G0jB05Ux/181588c9480c48b2fb75889d36553460c6f46eb9.gif"><span>Música
-                tocando: <a href="https://youtu.be/U2Qd9TRY1Ro?si=B9zovdrM5a70C51G">Beneath the Mask -rain- — Lyn</a>
+                tocando: <a href="https://youtu.be/U2Qd9TRY1Ro?si=B9zovdrM5a70C51G">Lyn: Beneath the Mask -rain-</a>
                 <a onclick="document.getElementById('audio').play()"><i class="fas fa-play"></i></a>
                 <a onclick="document.getElementById('audio').pause()"><i class="fas fa-pause"></i></a>
             </span>
@@ -49,7 +49,7 @@
     </div>
 
 
-    <div class="login">
+    <div class="login loading">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
@@ -88,12 +88,12 @@
                         <button class="botao" onclick="entrar()">Entrar</button>
                     </div>
                 </div>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
+                
                 <div id="div_erros_login"></div>
             </div>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
         </div>
     </div>
 
