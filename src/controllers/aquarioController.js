@@ -1,4 +1,3 @@
-/*
 var aquarioModel = require("../models/aquarioModel");
 
 function buscarAquariosPorEmpresa(req, res) {
@@ -48,4 +47,3 @@ module.exports = {
   buscarAquariosPorEmpresa,
   cadastrar
 }
-*/

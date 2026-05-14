@@ -3,6 +3,7 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var id = req.body.idServer;
 
     if (email == undefined) {
         res.status(400).send("Seu email está indefinido!");

@@ -64,7 +64,7 @@
   </div>
 
   <div class="justificativa">
-    <div class="container">
+    <div class="container" id="text">
       <h1>Por que escolhi essa OST?</h1>
 
       <span>
@@ -98,6 +98,15 @@
       <div class="fundo">
         <span>"SERÁ QUE TUDO ISSO NÃO TEM SENTIDO?"</span>
       </div>
+      <div class="fundo">
+        <span>"DESISTIR AQUI?"</span>
+      </div>
+      <span>Enquanto isso, mensagens de encorajamento de outros jogadores, em diversos idiomas, preenchem a tela.<br>
+      Após mais uma derrota, a última pergunta surge na tela:</span>
+      <div class="fundo">
+        <span>"ACEITAR OFERTA?"</span>
+      </div>
+      <button onclick="mostrar()" class="botao">SIM</button>
       
     </div>
   </div>
@@ -107,4 +116,8 @@
 <script>
   var audio = document.getElementById("audio");
   audio.volume = 0.20;
+
+  function mostrar() {
+    text.innerHTML += ``
+  }
 </script>

@@ -178,6 +178,24 @@ a:hover {
   text-decoration: underline;
 }
 
+.botao {
+  border: 1px solid transparent;
+  border-left: none;
+  border-right: none;
+  margin: 2px;
+  background-color: rgba(77, 73, 62,.35);
+  color: #4D493E;
+  font-size: 15px;
+  padding: 5px 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.botao:hover {
+  background-color: #4D493E;
+  color:#C8C2AA;
+  border-color: transparent;
+}
+
 /* links do Spotify/Youtube */
 iframe {
   width: 100%;

@@ -1,5 +1,7 @@
-/*
+
 var database = require("../database/config");
+
+
 
 function buscarUltimasMedidas(idAquario, limite_linhas) {
 
@@ -34,4 +36,4 @@ module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal
 }
-*/
+

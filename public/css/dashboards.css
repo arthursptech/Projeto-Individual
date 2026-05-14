@@ -40,6 +40,7 @@ body {
 .dash-right .avisos .div-form input {
   width: 95%;
   border-radius: 5px;
+  border-color: #e43c3c;
 }
 
 .dash-right .avisos .div-form textarea {
@@ -192,7 +193,8 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 10vw;
-  border: solid 2px white;
+  border: solid 2px #761414;
+  height: fit-content;
 }
 .cards {
   display: flex;
