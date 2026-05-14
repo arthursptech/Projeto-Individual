@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao()">
+<body onload="validarSessao(), carregarQuiz()">
 
     <div class="janela">
 
@@ -58,14 +58,46 @@
             </div>
 
         </div>
+        <div class="question">
+            <span>Questão 1 - De onde é essa OST?</span>
+            <audio controls src="../assets/audio/test_drive.mov"></audio>
 
-        
+            <div class="container-question">
 
-            <div class="cards" id="cardAquarios">
-
+                <div class="container-choice">
+                    <div class="choices">
+                        <input type="radio" id="httyd" name="Q1">
+                        <label for="httyd">
+                            <img
+                                src="https://www.papodecinema.com.br/wp-content/uploads/2012/02/20181217-como-treinar-o-seu-dragao-2578-poster.webp">
+                        </label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" id="rt" name="Q1">
+                        <label for="rt">
+                            <img src="https://m.media-amazon.com/images/M/MV5BOWY1MTIxYzctYTE1MC00YmEyLWJmMmUtMjY0MTgzYTJlMTdkXkEyXkFqcGc@._V1_.jpg">
+                        </label>
+                    </div>
+                </div>
+                <div class="container-choice2">
+                    <div class="choices">
+                        <input type="radio" id="kfp" name="Q1">
+                        <label for="kfp">
+                            <img
+                                src="https://media-cache.cinematerial.com/p/500x/cq4o5h0k/kung-fu-panda-2-dvd-movie-cover.jpg?v=1456662702">
+                        </label>
+                    </div>
+                    <div class="choices">
+                        <input type="radio" id="orl" name="Q1">
+                        <label for="orl">
+                            <img src="https://m.media-amazon.com/images/I/91plt45CFxL._UF1000,1000_QL80_.jpg">
+                        </label>
+                    </div>
+                </div>
             </div>
-
         </div>
+
+    </div>
 
     </div>
 
@@ -73,25 +105,11 @@
 
 <script>
     b_id.innerHTML = sessionStorage.ID_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function carregarQuiz() {
 
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
     }
+
 
 </script>
 

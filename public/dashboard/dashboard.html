@@ -28,7 +28,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body onload="listarTop(), validarSessao(), obterDadosGrafico()">
+<body onload="validarSessao(), listarTop(), listarMedia(), obterDadosGrafico()">
 
     <div class="janela">
         <div class="header-left">
@@ -80,7 +80,7 @@
                     </div>
                     <div class="item-regua ideal">
                         <p>Média de acertos</p>
-                        <p id="media">media</p>
+                        <p> <span id="media">media</span>/10</p>
                     </div>
                     <div class="item-regua alerta-quente">
                         <p>OST com mais erros</p>
@@ -139,6 +139,18 @@
                     document.getElementById("idUser").innerHTML = topUser.fkUsuario;
                     
                 })
+            }
+        })
+    }
+    function listarMedia() {
+        fetch("/ranking/calcular").then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var result = resposta[0]; 
+                    document.getElementById("media").innerHTML = result.media;
+
+                }) 
             }
         })
     }

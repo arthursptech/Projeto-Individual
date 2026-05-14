@@ -11,4 +11,11 @@ router.get("/listar", function(req,res) {
     rankingController.buscarRanking(req,res);
 })
 
+router.get("/calcular", function(req,res) {
+    rankingController.calcularMedia(req,res);
+})
+
+router.get("/quiz", function(req,res) {
+    rankingController.buscarQuiz(req,res);
+})
 module.exports = router;
