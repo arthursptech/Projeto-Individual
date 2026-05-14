@@ -195,9 +195,23 @@ a:hover {
   color:#C8C2AA;
   border-color: transparent;
 }
-
+.botao a {
+  text-decoration: none;
+  color:#4D493E;
+}
+.botao a:hover {
+  background-color: #4D493E;
+  color:#C8C2AA;
+  border-color: transparent;
+}
 /* links do Spotify/Youtube */
 iframe {
+  width: 100%;
+  height: 322px;
+  border-radius: 32px;
+  border: none;
+}
+#img_9s img {
   width: 100%;
   height: 322px;
   border-radius: 32px;

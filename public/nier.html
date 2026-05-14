@@ -79,7 +79,9 @@
 
         O formato em 8-bit havia aparecido constantemente desde a rota B, quando jogamos com um personagem que consegue hackear os inimigos, como podemos ver a seguir:
         <br>
-        <iframe src="https://www.youtube.com/embed/n39z44-F2Po?si=uUuBfn-ylPNb5K3S&amp;start=173" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="img_9s">
+          <img onclick="tocarVideo()" src="./assets/imgs/9SYT.png">
+        </div>
         <br>
 
         Quando chegamos no refrão, a música deixa de ser em 8-bit e o refrão da versão em inglês começa a ser cantado.
@@ -88,7 +90,7 @@
         <br> <hr>
         A rota E, que é o final verdadeiro do jogo, é possívelmente o momento mais marcante e emocionante do jogo inteiro para muitos jogadores, inclusive eu. Em uma tentativa de ir contra o sistema criado pelos desenvolvedores do jogo, o jogador, similar a quando hackeia um inimigo, precisa lutar contra inimigos que atacam o jogador de volta, mas agora os inimigos são os créditos finais:
         <img src="./assets/imgs/endingE.png" alt="Nier:Automata Ending E">
-        
+        <br>
         No início, os inimigos são de dificuldade fácil, o que possibilita o jogador de derrotá-los sem grandes problemas. Porém, após alguns minutos, a dificuldade fica exponencialmente mais difícil, até chegar ao ponto do jogador não conseguir mais derrotar nenhum inimigo, e isso se repete uma vez, duas vezes, três vezes, quatro vezes, cinco vezes—
         <br>
       </span>
@@ -107,7 +109,7 @@
         <span>"ACEITAR OFERTA?"</span>
       </div>
       <button onclick="mostrar()" class="botao">SIM</button>
-      
+      <audio id="nierE" src="assets/audio/Weight_of_the_world_E.mp3"></audio>
     </div>
   </div>
 
@@ -116,8 +118,26 @@
 <script>
   var audio = document.getElementById("audio");
   audio.volume = 0.20;
-
+  var nierE = document.getElementById("nierE");
+  nierE.volume = 0.20;
   function mostrar() {
-    text.innerHTML += ``
+    audio.pause();
+    nierE.play();
+    text.innerHTML += `<span>Imediatamente, um coral de vozes se junta a voz que até então estava sozinha, e o jogador, após aceitar a oferta, se vê rodeado de outros jogadores:
+    <img src="./assets/imgs/endingE-finale.jpg">
+    <br>
+    Esse coral é composto pela equipe de desenvolvedores e pelo próprio criador do jogo, Yoko Taro, intensificando a emoção que está presente nesse momento.
+    <hr>
+    E é por causa de tudo isso que compõe não só o significado, mas a música em si, que esta OST é minha música favorita. <br>
+    <button class="botao" onclick="window.location.href='index.html'">Voltar a Home</button>`
+
+  }
+
+  function tocarVideo() {
+    audio.pause();
+    nierE.pause();
+
+    img_9s.innerHTML = `
+    <iframe src="https://www.youtube.com/embed/n39z44-F2Po?si=uUuBfn-ylPNb5K3S&amp;start=173&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
   }
 </script>
