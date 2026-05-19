@@ -42,8 +42,12 @@ function calcularMedia(req, res) {
     });
 }
 
-function buscarQuiz(req, res) {
-    rankingModel.buscarQuiz().then(function (resultado) {
+function adicionarResposta(req, res) {
+    var resposta = req.body.respostaServer;
+    var usuario = req.body.userServer;
+
+    rankingModel.adicionarResposta(questao,resposta,usuario)
+        .then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -51,7 +55,7 @@ function buscarQuiz(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar os dados do quiz: ", erro.sqlMessage);
+        console.log("Houve um erro ao adicionar os dados do quiz: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -59,5 +63,5 @@ module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
-    buscarQuiz
+    adicionarResposta
 }

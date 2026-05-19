@@ -26,9 +26,10 @@ function calcularMedia() {
     return database.executar(instrucaoSql);
 }
 
-function buscarQuiz() {
+function adicionarResposta(resposta, usuario) {
     var instrucaoSql = `
-    select questao, alternativas.* from alternativas JOIN perguntas on fkPergunta = perguntas.id WHERE questao = 'Q1';`;
+    INSERT INTO respostasUser (fkQuestao, fkAlternativa, fkUsuario) VALUES
+    (${resposta}, ${usuario});`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -38,5 +39,5 @@ module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
-    buscarQuiz
+    adicionarResposta
 };

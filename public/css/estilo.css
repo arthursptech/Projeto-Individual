@@ -20,7 +20,12 @@ body {
   --tamanho-footer: 65px;
 }
 
-
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  background-color: black;
+}
 .container {
   display: flex;
   width: 80%;

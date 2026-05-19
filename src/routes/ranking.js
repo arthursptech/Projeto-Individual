@@ -15,7 +15,7 @@ router.get("/calcular", function(req,res) {
     rankingController.calcularMedia(req,res);
 })
 
-router.get("/quiz", function(req,res) {
-    rankingController.buscarQuiz(req,res);
+router.post("/quiz", function(req,res) {
+    rankingController.adicionarResposta(req,res);
 })
 module.exports = router;

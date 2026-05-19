@@ -20,7 +20,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), carregarQuiz()">
+<body onload="validarSessao(), esconderQuiz()">
 
     <div class="janela">
 
@@ -58,24 +58,30 @@
             </div>
 
         </div>
-        <div class="body">
-            <div class="question">
+
+        <div class="inicio" id="iniciarBotao">
+            <span>INICIAR QUIZ</span>
+            <button onclick="iniciarQuiz()" class="botao">Iniciar</button>
+        </div>
+
+        <div class="body" id="main">
+            <div class="question" id="Q1">
                 <span>Questão 1 - De onde é essa OST?</span>
-                <audio controls src="../assets/audio/test_drive.mov"></audio>
+                <audio controls src="https://codehs.com/uploads/8fbd34850563b0d73ff295de1869ad65"></audio>
 
                 <div class="container-question">
 
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="httyd" name="Q1">
-                            <label for="httyd">
+                            <input type="radio" id="1" name="Q1">
+                            <label for="1">
                                 <img
                                     src="https://www.papodecinema.com.br/wp-content/uploads/2012/02/20181217-como-treinar-o-seu-dragao-2578-poster.webp">
                             </label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="rt" name="Q1">
-                            <label for="rt">
+                            <input type="radio" id="2" name="Q1">
+                            <label for="2">
                                 <img
                                     src="https://m.media-amazon.com/images/M/MV5BOWY1MTIxYzctYTE1MC00YmEyLWJmMmUtMjY0MTgzYTJlMTdkXkEyXkFqcGc@._V1_.jpg">
                             </label>
@@ -83,301 +89,310 @@
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="kfp" name="Q1">
-                            <label for="kfp">
+                            <input type="radio" id="3" name="Q1">
+                            <label for="3">
                                 <img
                                     src="https://media-cache.cinematerial.com/p/500x/cq4o5h0k/kung-fu-panda-2-dvd-movie-cover.jpg?v=1456662702">
                             </label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="orl" name="Q1">
-                            <label for="orl">
+                            <input type="radio" id="4" name="Q1">
+                            <label for="4">
                                 <img src="https://m.media-amazon.com/images/I/91plt45CFxL._UF1000,1000_QL80_.jpg">
                             </label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(2)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q2">
                 <span>Questão 2 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="jjk" name="Q2">
-                            <label for="jjk"><img
-                                    src=""></label>
+                            <input type="radio" id="5" name="Q2">
+                            <label for="5"><img
+                                    src="https://br.web.img3.acsta.net/pictures/20/09/14/10/31/4875617.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="fate" name="Q2">
-                            <label for="fate"><img
-                                    src=""></label>
+                            <input type="radio" id="6" name="Q2">
+                            <label for="6"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BZTNmZWI3ZWYtNjkzYi00ZTFkLWI0MzctMjc2YzlmNGRkNzRiXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="eightysix" name="Q2">
-                            <label for="eightysix"><img
-                                    src=""></label>
+                            <input type="radio" id="7" name="Q2">
+                            <label for="7"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BOWNmY2IzOGItMmQyNy00ZTM0LThiNjItODM3YzdkYjRlNWU1XkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="sao" name="Q2">
-                            <label for="sao"><img
-                                    src=""></label>
+                            <input type="radio" id="8" name="Q2">
+                            <label for="8"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BN2NhYzU2NDEtYzI1NS00MjgzLThjZGUtOTYxNGJkZjZmNDdjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(3)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q3">
                 <span>Questão 3 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="kny" name="Q3">
-                            <label for="kny"><img
-                                    src=""></label>
+                            <input type="radio" id="9" name="Q3">
+                            <label for="9"><img
+                                    src="https://i1.sndcdn.com/artworks-000640100413-69mq2s-t500x500.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="recreators" name="Q3">
-                            <label for="recreators"><img
-                                    src=""></label>
+                            <input type="radio" id="10" name="Q3">
+                            <label for="10"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMzk2NGFiZjItZmM1ZS00OTlkLWI2NTItZGEwMjk0NzI2ZmZkXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="hxh" name="Q3">
-                            <label for="hxh"><img
-                                    src=""></label>
+                            <input type="radio" id="11" name="Q3">
+                            <label for="11"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="onepiece" name="Q3">
-                            <label for="onepiece"><img
-                                    src=""></label>
+                            <input type="radio" id="12" name="Q3">
+                            <label for="12"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(4)">Próxima Questão</button>
             </div>
 
-            <div class="question">
-                <span>Questão 4 - De onde é essa OST (Visual Novel)?</span>
+            <div class="question" id="Q4">
+                <span>Questão 4 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="steins" name="Q4">
-                            <label for="steins"><img
-                                    src=""></label>
+                            <input type="radio" id="13" name="Q4">
+                            <label for="13"><img
+                                    src="../assets/imgs/steins_gate.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="umineko" name="Q4">
-                            <label for="umineko"><img
-                                    src=""></label>
+                            <input type="radio" id="14" name="Q4">
+                            <label for="14"><img
+                                    src="../assets/imgs/umineko.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="dangan" name="Q4">
-                            <label for="dangan"><img
-                                    src=""></label>
+                            <input type="radio" id="15" name="Q4">
+                            <label for="15"><img
+                                    src="https://static.wikia.nocookie.net/danganronpa/images/7/7d/Danganronpa_Decadence_-_Switch_Icon_%281%29.jpg/revision/latest?cb=20210616130240"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="higurashi" name="Q4">
-                            <label for="higurashi"><img
-                                    src=""></label>
+                            <input type="radio" id="16" name="Q4">
+                            <label for="16"><img
+                                    src="https://static.wikia.nocookie.net/umineko/images/3/3a/HigurashiCh1.jpg/revision/latest?cb=20200630010247"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(5)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q5">
                 <span>Questão 5 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="oppen" name="Q5">
-                            <label for="oppen"><img
-                                    src=""></label>
+                            <input type="radio" id="17" name="Q5">
+                            <label for="17"><img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Oppenheimer_%28film%29.jpg/250px-Oppenheimer_%28film%29.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="batman" name="Q5">
-                            <label for="batman"><img
-                                    src=""></label>
+                            <input type="radio" id="18" name="Q5">
+                            <label for="18"><img
+                                    src="https://cdn.europosters.eu/image/1300/122127.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="inception" name="Q5">
-                            <label for="inception"><img
-                                    src=""></label>
+                            <input type="radio" id="19" name="Q5">
+                            <label for="19"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="interstellar" name="Q5">
-                            <label for="interstellar"><img
-                                    src=""></label>
+                            <input type="radio" id="20" name="Q5">
+                            <label for="20"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(6)">Próxima Questão</button>
             </div>
 
-            <div class="question">
-                <span>Questão 6 - De onde é essa OST (Games)?</span>
+            <div class="question" id="Q6">
+                <span>Questão 6 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="nier" name="Q6">
-                            <label for="nier"><img
-                                    src=""></label>
+                            <input type="radio" id="21" name="Q6">
+                            <label for="21"><img
+                                    src="https://upload.wikimedia.org/wikipedia/pt/1/15/Nier_Automata_capa.png"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="kh" name="Q6">
-                            <label for="kh"><img
-                                    src=""></label>
+                            <input type="radio" id="22" name="Q6">
+                            <label for="22"><img
+                                    src="https://e.snmc.io/lk/f/x/9f4e2979ed547e30ba1399273fff4726/6850890"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="detroit" name="Q6">
-                            <label for="detroit"><img
-                                    src=""></label>
+                            <input type="radio" id="23" name="Q6">
+                            <label for="23"><img
+                                    src="https://upload.wikimedia.org/wikipedia/en/e/ee/Detroit_Become_Human.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="minecraft" name="Q6">
-                            <label for="minecraft"><img
-                                    src=""></label>
+                            <input type="radio" id="24" name="Q6">
+                            <label for="24"><img
+                                    src="https://store-images.s-microsoft.com/image/apps.17382.13510798885735219.9735d495-578c-4a4c-b892-3eb3a780b3a0.d3792486-cf98-40c0-a2c1-d6443f0e2b70"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(7)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q7">
                 <span>Questão 7 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="dune" name="Q7">
-                            <label for="dune"><img
-                                    src=""></label>
+                            <input type="radio" id="25" name="Q7">
+                            <label for="25"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="godzilla" name="Q7">
-                            <label for="godzilla"><img
-                                    src=""></label>
+                            <input type="radio" id="26" name="Q7">
+                            <label for="26"><img
+                                    src="https://upload.wikimedia.org/wikipedia/pt/0/02/Shin_Godzilla.png"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="avengers" name="Q7">
-                            <label for="avengers"><img
-                                    src=""></label>
+                            <input type="radio" id="27" name="Q7">
+                            <label for="27"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="inception2" name="Q7">
-                            <label for="inception2"><img
-                                    src=""></label>
+                            <input type="radio" id="28" name="Q7">
+                            <label for="28"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(8)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q8">
                 <span>Questão 8 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="lom" name="Q8">
-                            <label for="lom"><img
-                                    src=""></label>
+                            <input type="radio" id="29" name="Q8">
+                            <label for="29"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMWE1ZWYwZGUtZjRmOS00NzUzLTlkZmUtMTEwMjNhNTVmNDIwXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="solo" name="Q8">
-                            <label for="solo"><img
-                                    src=""></label>
+                            <input type="radio" id="30" name="Q8">
+                            <label for="30"><img
+                                    src="https://media.fstatic.com/77RhrfejSUGDGzWEc4otOxqu_wY=/350x525/smart/filters:format(webp)/media/movies/covers/2023/12/138405l.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="frieren" name="Q8">
-                            <label for="frieren"><img
-                                    src=""></label>
+                            <input type="radio" id="31" name="Q8">
+                            <label for="31"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="snk" name="Q8">
-                            <label for="snk"><img
-                                    src=""></label>
+                            <input type="radio" id="32" name="Q8">
+                            <label for="32"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BZjliODY5MzQtMmViZC00MTZmLWFhMWMtMjMwM2I3OGY1MTRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(9)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q9">
                 <span>Questão 9 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="cyberpunk" name="Q9">
-                            <label for="cyberpunk"><img
-                                    src=""></label>
+                            <input type="radio" id="33" name="Q9">
+                            <label for="33"><img
+                                    src="https://e.snmc.io/lk/o/x/861dfb13b8fd707ceee38785c3ab9742/11786140"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="finding" name="Q9">
-                            <label for="finding"><img
-                                    src=""></label>
+                            <input type="radio" id="34" name="Q9">
+                            <label for="34"><img
+                                    src="https://gamecritix.co.uk/wp-content/uploads/2025/11/Finding-Paradise-Review.jpeg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="outerwilds" name="Q9">
-                            <label for="outerwilds"><img
-                                    src=""></label>
+                            <input type="radio" id="35" name="Q9">
+                            <label for="35"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BNDY3YzliYTUtMmEzMy00OWYwLThhYzUtYWI1ZGIwYTE0NTA3XkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="hsr" name="Q9">
-                            <label for="hsr"><img
-                                    src=""></label>
+                            <input type="radio" id="36" name="Q9">
+                            <label for="36"><img
+                                    src="https://upload.wikimedia.org/wikipedia/ru/8/8e/Honkai_Star_Rail_Cover.jpg"></label>
                         </div>
                     </div>
                 </div>
+                <button class="btn-nav questao" onclick="mudarQuestao(10)">Próxima Questão</button>
             </div>
 
-            <div class="question">
+            <div class="question" id="Q10">
                 <span>Questão 10 - De onde é essa OST?</span>
                 <audio controls src=""></audio>
                 <div class="container-question">
                     <div class="container-choice">
                         <div class="choices">
-                            <input type="radio" id="ffxv" name="Q10">
-                            <label for="ffxv"><img
-                                    src=""></label>
+                            <input type="radio" id="37" name="Q10">
+                            <label for="37"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMjA3ZDg5MDctODM2NC00MmRmLWEyZTQtN2I0NTAxNDA3MWQzXkEyXkFqcGc@._V1_.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="kabaneri" name="Q10">
-                            <label for="kabaneri"><img
-                                    src=""></label>
+                            <input type="radio" id="38" name="Q10">
+                            <label for="38"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMTY5NTkwMTctYjRkNC00MWJiLTgxNmUtZTA3Yzk0OGI3NWU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                     <div class="container-choice2">
                         <div class="choices">
-                            <input type="radio" id="steinsvn" name="Q10">
-                            <label for="steinsvn"><img
-                                    src=""></label>
+                            <input type="radio" id="39" name="Q10">
+                            <label for="39"><img
+                                    src="../assets/imgs/steins_gate.jpg"></label>
                         </div>
                         <div class="choices">
-                            <input type="radio" id="charlotte" name="Q10">
-                            <label for="charlotte"><img
-                                    src=""></label>
+                            <input type="radio" id="40" name="Q10">
+                            <label for="40"><img
+                                    src="https://m.media-amazon.com/images/M/MV5BMzFjODA2Y2YtN2RiOS00OWZmLTk5NzEtOTgyZDlmYzFjZWU5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"></label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="btn-final">
+            <div class="btn-final" id="div_botao">
                 <button class="btn-nav" onclick="finalizarQuiz()" style="cursor: pointer;">Finalizar Quiz</button>
             </div>
         </div>
@@ -395,11 +410,73 @@
 <script>
     b_id.innerHTML = sessionStorage.ID_USUARIO;
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    function carregarQuiz() {
 
+    function finalizarQuiz() {
+        let respostas = [];
+        for (let i = 1; i <= 10; i++) {
+            let resposta = document.querySelector(`input[name="Q${i}"]:checked`);
+            respostas.push(resposta);
+
+        }
+         
+        // console.log(respostas);
+        // for (let i = 1; i <= 10; i++) {
+        //     buscarQuiz(`Q${i}`);
+            
+        // }
     }
 
+    function esconderQuiz() {
+        for (let i = 1; i <= 10; i++) {
+            document.getElementById(`Q${i}`).style.display = "none";
+        }
+        document.getElementById('div_botao').style.display = "none";
+        document.getElementById('main').style.display = "none";
+    }
+    function iniciarQuiz() {
+        document.getElementById('Q1').style.display = "flex";
+        document.getElementById('main').style.display = "flex";
+        document.getElementById('iniciarBotao').style.display = "none";
+    }
+    function mudarQuestao(questao) {
+        let questaoAtual = document.getElementById(`Q${questao - 1}`);
+        let radio = questaoAtual.querySelector('[type="radio"]:checked');
+        let respostaUser = radio.id;
+    
+        // adicionarResposta(questaoAtual, respostaUser, sessionStorage.ID_USUARIO);
 
+        // Enviando a resposta da questão atual
+        fetch("/ranking/quiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                respostaServer: respostaUser,
+                userServer: sessionStorage.ID_USUARIO
+            }),
+        })
+        .then(function (resposta){
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("resposta está ok");
+                document.getElementById(`Q${questao}`).style.display = "flex";
+                document.getElementById(`Q${questao - 1}`).style.display = "none";
+            } else {
+                console.log("Houve um erro ao registrar a resposta do usuário");
+                window.location = "cards.html";
+            }
+        });
+    }
+
+    function desmarcarRadio() {
+        const options = document.getElementsByClass("choices");
+        for (let i = 0; i < options.length; i++) {
+            options[i].checked = false;
+            
+        }
+    }
 </script>
 
 </html>

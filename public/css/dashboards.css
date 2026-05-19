@@ -439,6 +439,22 @@ canvas {
   cursor: pointer;
 }
 
+.inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 60%;
+  color: white;
+  font-size: 30px;
+  margin: 30vh 0 0 30vw;
+  background-color: #761414;
+  border: white 5px;
+  border-style:double;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .question {
   display: flex;
   flex-wrap: wrap;
@@ -449,7 +465,7 @@ canvas {
   align-items: center;
   color: white;
   font-size: 23px;
-  margin: 1vh 0 0 30vw;
+  margin: 5vh 0 0 30vw;
   background-color: #761414;
   border: white 5px;
   border-style:double;
@@ -468,6 +484,7 @@ canvas {
   cursor: pointer;
   transition: 0.2s;
   border-radius: 12px;
+  border: 1px solid white;
 }
 .question audio {
   margin: 5px 0;
@@ -475,7 +492,7 @@ canvas {
 .question img:hover {
   width: 230px;
   height: 210px;
-  border-radius: 0px;
+  border-radius: 2px;
 }
 .container-choice {
   display: flex;
@@ -498,8 +515,17 @@ canvas {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-size: 20px;
+  font-size: 1.5rem;
   margin: 10px 0 10px 40vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  border: #761414 2px solid;
+}
+.btn-nav.questao {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 19px;
 }
 
 .body {

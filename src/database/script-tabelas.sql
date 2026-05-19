@@ -44,23 +44,18 @@ CREATE TABLE alternativas (
     titulo VARCHAR(60),
     origem VARCHAR(60),
     tipo TINYINT,
-    fkPergunta INT REFERENCES perguntas (id)
+    fkPergunta INT,
+    FOREIGN KEY (fkPergunta) REFERENCES perguntas(id)
 );
 
 
 CREATE TABLE respostasUser (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    fkQuestao INT REFERENCES perguntas (id),
-    fkAlternativa INT REFERENCES alternativas (id),
-    fkUsuario INT REFERENCES usuario (id)
+    fkAlternativa INT,
+    fkUsuario INT,
+    FOREIGN KEY (fkAlternativa) REFERENCES alternativas(id),
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
-
-INSERT INTO alternativas (titulo, origem, tipo, fkPergunta) VALUES
-('Test Drive', 'Como Treinar seu Dragão', 1, 1),
-(null, 'Robot Trains', 0, 1),
-(null, 'Kung Fu Panda', 0, 1),
-(null, 'O Rei Leão', 0, 1);
-
 
 INSERT INTO perguntas (questao) VALUES
 ('Q1'),
@@ -74,6 +69,63 @@ INSERT INTO perguntas (questao) VALUES
 ('Q9'),
 ('Q10');
 
+INSERT INTO alternativas (titulo, origem, tipo, fkPergunta) VALUES
+('Test Drive', 'Como Treinar seu Dragão', 1, 1),
+(null, 'Robot Trains', 0, 1),
+(null, 'Kung Fu Panda', 0, 1),
+(null, 'O Rei Leão', 0, 1),
+(null, 'Jujutsu Kaisen', 0, 2),
+(null, 'Fate/stay night UBW', 0, 2),
+(null, '86: Eighty Six', 1, 2),
+(null, 'Sword Art Online', 0, 2),
+(null, 'Kimetsu no Yaiba', 0, 3),
+(null, 'Re:Creators', 0, 3),
+(null, 'Hunter x Hunter', 1, 3),
+(null, 'One Piece', 0, 3),
+(null, 'Steins;Gate', 0, 4),
+(null, 'Umineko', 1, 4),
+(null, 'Danganronpa', 0, 4),
+(null, 'Higurashi', 0, 4),
+(null, 'Oppenheimer', 0, 5),
+(null, 'The Batman', 0, 5),
+(null, 'Inception', 1, 5),
+(null, 'Interstellar', 0, 5),
+(null, 'Nier:Automata', 1, 6),
+(null, 'Kingdom Hearts', 0, 6),
+(null, 'Detroit: Become Human', 0, 6),
+(null, 'Minecraft', 0, 6),
+(null, 'Dune', 0, 7),
+(null, 'Shin Godzilla', 1, 7),
+(null, 'Avengers Infinity War', 0, 7),
+(null, 'Inception', 0, 7),
+(null, 'Lord of the Mysteries', 0, 8),
+(null, 'Solo Leveling', 0, 8),
+(null, 'Frieren', 1, 8),
+(null, 'Shingeki no Kyojin', 0, 8),
+(null, 'Cyberpunk', 0, 9),
+(null, 'Finding Paradise', 0, 9),
+(null, 'Outer Wilds', 1, 9),
+(null, 'Honkai: Star Rail', 0, 9),
+(null, 'Final Fantasy XV', 1, 10),
+(null, 'Kabaneri of the Iron Fortress', 0, 10),
+(null, 'Steins;Gate', 0, 10),
+(null, 'Hello Charlotte', 0, 10);
+
+select * from usuario;
+INSERT INTO ranking (qtd_acertos, fkUsuario)
+SELECT 
+    COUNT(a.id) AS qtd_acertos,
+    ru.fkUsuario
+FROM respostasUser ru
+JOIN alternativas a ON ru.fkAlternativa = a.id
+WHERE ru.fkUsuario = 4 AND a.tipo = 1
+GROUP BY ru.fkUsuario;
+
+
+-- Insert da questao, alternativa, e do usuario na tabela de respostas do Usuário
+INSERT INTO respostasUser (fkAlternativa, fkUsuario) VALUES;
+
+-- Desconhecido
 select questao, alternativas.* from alternativas JOIN perguntas on fkPergunta = perguntas.id WHERE questao = 'Q1';
 
 select * from usuario;
