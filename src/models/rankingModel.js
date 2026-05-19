@@ -28,8 +28,25 @@ function calcularMedia() {
 
 function adicionarResposta(resposta, usuario) {
     var instrucaoSql = `
-    INSERT INTO respostasUser (fkQuestao, fkAlternativa, fkUsuario) VALUES
+    INSERT INTO respostasUser (fkAlternativa, fkUsuario) VALUES
     (${resposta}, ${usuario});`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function somarAcertos(idUsuario) {
+    var instrucaoSql = `
+    INSERT INTO ranking (qtd_acertos, fkUsuario)
+    SELECT 
+        SUM(CASE
+        WHEN a.tipo = 1 THEN 1 ELSE 0
+        END) AS qtd_acertos,
+        ru.fkUsuario
+    FROM respostasUser ru
+    JOIN alternativas a ON ru.fkAlternativa = a.id
+    WHERE ru.fkUsuario = ${idUsuario}
+    GROUP BY ru.fkUsuario;`
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -39,5 +56,6 @@ module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
-    adicionarResposta
+    adicionarResposta,
+    somarAcertos
 };

@@ -18,4 +18,7 @@ router.get("/calcular", function(req,res) {
 router.post("/quiz", function(req,res) {
     rankingController.adicionarResposta(req,res);
 })
+router.post("/soma", function(req,res) {
+    rankingController.somarAcertos(req,res);
+})
 module.exports = router;

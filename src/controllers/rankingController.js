@@ -46,7 +46,7 @@ function adicionarResposta(req, res) {
     var resposta = req.body.respostaServer;
     var usuario = req.body.userServer;
 
-    rankingModel.adicionarResposta(questao,resposta,usuario)
+    rankingModel.adicionarResposta(resposta,usuario)
         .then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
@@ -59,9 +59,27 @@ function adicionarResposta(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
+function somarAcertos(req,res) {
+    var usuario = req.body.userServer;
+
+    rankingModel.somarAcertos(usuario)
+        .then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os dados do quiz do usuário: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
-    adicionarResposta
+    adicionarResposta,
+    somarAcertos
 }

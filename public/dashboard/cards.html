@@ -412,18 +412,50 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function finalizarQuiz() {
-        let respostas = [];
-        for (let i = 1; i <= 10; i++) {
-            let resposta = document.querySelector(`input[name="Q${i}"]:checked`);
-            respostas.push(resposta);
+        let questaoAtual = document.getElementById('Q10');
+        let radio = questaoAtual.querySelector('[type="radio"]:checked');
+        let respostaUser = radio.id;
 
-        }
-         
-        // console.log(respostas);
-        // for (let i = 1; i <= 10; i++) {
-        //     buscarQuiz(`Q${i}`);
-            
-        // }
+        // Enviando a resposta da última questão
+        fetch("/ranking/quiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                respostaServer: respostaUser,
+                userServer: sessionStorage.ID_USUARIO
+            }),
+        })
+        .then(function (resposta){
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("resposta está ok");
+            } else {
+                console.log("Houve um erro ao registrar a resposta do usuário");
+                window.location = "cards.html";
+            }
+        });
+
+        // Verificando quantos acertos o usuário teve
+        fetch("/ranking/soma", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                userServer: sessionStorage.ID_USUARIO
+            }),
+        })
+        .then(function (resposta){
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("resposta está ok");
+            }
+        })
+
     }
 
     function esconderQuiz() {
@@ -442,8 +474,6 @@
         let questaoAtual = document.getElementById(`Q${questao - 1}`);
         let radio = questaoAtual.querySelector('[type="radio"]:checked');
         let respostaUser = radio.id;
-    
-        // adicionarResposta(questaoAtual, respostaUser, sessionStorage.ID_USUARIO);
 
         // Enviando a resposta da questão atual
         fetch("/ranking/quiz", {
@@ -463,6 +493,9 @@
                 console.log("resposta está ok");
                 document.getElementById(`Q${questao}`).style.display = "flex";
                 document.getElementById(`Q${questao - 1}`).style.display = "none";
+                if (questao == 10) {
+                    document.getElementById("div_botao").style.display = "flex";
+                }
             } else {
                 console.log("Houve um erro ao registrar a resposta do usuário");
                 window.location = "cards.html";
