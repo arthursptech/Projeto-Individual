@@ -28,7 +28,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body onload="validarSessao(), listarTop(), listarMedia(), obterDadosGrafico()">
+<body onload="validarSessao(), listarTop(), listarMedia(), obterDadosGrafico(), buscarScore()">
 
     <div class="janela">
         <div class="header-left">
@@ -108,7 +108,8 @@
 <!-- Desejável: mostrar tentativas -->
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_id.innerHTML = sessionStorage.ID_USUARIO; 
+    b_id.innerHTML = sessionStorage.ID_USUARIO
+    let idUser = sessionStorage.ID_USUARIO;
     const ranking = document.getElementById('graficos');
     Chart.defaults.color = '#FFF';
     // new Chart(ranking, {
@@ -137,7 +138,7 @@
                     var topUser = resposta[0];
                     document.getElementById("r_usuario").innerHTML = topUser.nome;
                     document.getElementById("idUser").innerHTML = topUser.fkUsuario;
-                    
+
                 })
             }
         })
@@ -147,14 +148,27 @@
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    var result = resposta[0]; 
+                    var result = resposta[0];
                     document.getElementById("media").innerHTML = result.media;
 
-                }) 
+                })
             }
         })
     }
 
+    function buscarScore() {
+        fetch(`/ranking/score/${idUser}`, {
+            method: "GET"
+        }).then(res => {
+            res.json().then(json => {
+                const usuario = json[0];
+                document.getElementById("scoreUser").innerHTML = usuario.qtd_acertos;
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
 
     // function exibirAquario(idAquario) {
     //     let todosOsGraficos = JSON.parse(sessionStorage.AQUARIOS);
@@ -199,7 +213,7 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    
+
     function obterDadosGrafico() {
 
         fetch("/ranking/listar", { cache: 'no-store' }).then(function (response) {

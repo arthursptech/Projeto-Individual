@@ -52,10 +52,24 @@ function somarAcertos(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarScore(idUsuario) {
+    var instrucaoSql = `
+    SELECT 
+        qtd_acertos
+    FROM
+        ranking
+    WHERE
+        fkUsuario = ${idUsuario};`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
     adicionarResposta,
-    somarAcertos
+    somarAcertos,
+    buscarScore
 };

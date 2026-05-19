@@ -76,10 +76,22 @@ function somarAcertos(req,res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
+function buscarScore(req,res) {
+    console.log(req.params.id);
+    
+    rankingModel.buscarScore(req.params.id)
+        .then(resultado => {
+            res.json(resultado);
+        }).catch(err => {
+            res.status(500).send(err);
+        })
+}
 module.exports = {
     buscarTopUsuario,
     buscarRanking,
     calcularMedia,
     adicionarResposta,
-    somarAcertos
+    somarAcertos,
+    buscarScore
 }
